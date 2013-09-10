@@ -29,6 +29,7 @@ module OmniAuth
 
       def raw_info
         @raw_info ||= MultiXml.parse(access_token.get("/api.xro/2.0/Users").body)["Response"]["Users"]["User"]
+        @raw_info[0] if @raw_info.is_a? Array
       end
     end
   end
