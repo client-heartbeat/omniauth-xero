@@ -32,7 +32,7 @@ module OmniAuth
       end
 
       def parse_user_data(user_data)
-        user_data.is_a?(Array) ? user_data[0]["User"] : user_data["User"]
+        user_data["User"].is_a?(Array) ? user_data["User"][0] : user_data["User"]
       end
     end
   end
